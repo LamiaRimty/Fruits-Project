@@ -17,7 +17,7 @@ const fruit = new Fruit({
 
 });
 
-fruit.save(); //save fruits doc save in Fruit collection fruitdb
+//fruit.save(); //save fruits doc save in Fruit collection fruitdb
 
 const personSchema = new mongoose.Schema({
  //collection names
@@ -76,7 +76,10 @@ Fruit.find(function(error,fruits){
     console.log(error);
   }
   else{
-    console.log(fruits);
+  fruits.forEach( function(fruit){ //each individual object inside the array.pick out each fruit out of array
+    console.log(fruit.name);
+  });
   }
-
 });
+
+
