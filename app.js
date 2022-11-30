@@ -59,13 +59,24 @@ const person = new Person(
 
 
 
-Fruit.insertMany([ plum, avocado, orange], function(error) {
+// Fruit.insertMany([ plum, avocado, orange], function(error) {
 
+//   if(error){
+//     console.log(error);
+//   }
+
+//   else{
+//     console.log("Sucessfully saved all fruits to the FruitsDB");
+//   }
+// });
+
+//reading from db ,call find function
+Fruit.find(function(error,fruits){
   if(error){
     console.log(error);
   }
-
   else{
-    console.log("Sucessfully saved all fruits to the FruitsDB");
+    console.log(fruits);
   }
+
 });
