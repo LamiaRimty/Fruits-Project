@@ -57,10 +57,12 @@ const person = new Person(
   review:"Spanish oranges are sweet"
 });
 
-Fruit.insertMany([ plum, avocado, orange], function(error, docs) {
 
-  if(err){
-    console.log(err);
+
+Fruit.insertMany([ plum, avocado, orange], function(error) {
+
+  if(error){
+    console.log(error);
   }
 
   else{
