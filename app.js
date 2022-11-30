@@ -1,18 +1,69 @@
-const { MongoClient } = require("mongodb");
-// Connection URI
-const url ="mongodb://localhost:27017";
-// Create a new MongoClient
-const client = new MongoClient(url);
-async function run() {
-  try {
-    // Connect the client to the server (optional starting in v4.7)
-    await client.connect();
-    // Establish and verify connection
-    await client.db("fruitsDB").command({ ping: 1 });
-    console.log("Connected successfully to server");
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/fruitsDB');
+
+const fruitSchema = new mongoose.Schema({
+  //collection names
+   name: String,
+   rating: Number,
+   review: String
+ });
+ 
+//schema model
+const Fruit = mongoose.model("Fruit", fruitSchema); //convert prularise form fruits,stick to specify sturcture called fruitschema
+const fruit = new Fruit({
+ name: "Apple",
+ rating:8,
+ review: "Pink lady apples are kinda sour!"
+
+});
+
+fruit.save(); //save fruits doc save in Fruit collection fruitdb
+
+const personSchema = new mongoose.Schema({
+ //collection names
+  name:String,
+  age: Number
+});
+
+//schema model
+const Person = mongoose.model("Person", personSchema); //convert prularise form fruits,stick to specify sturcture called fruitschema
+const person = new Person(
+  
+  {
+    name:"John",
+    age:30
   }
-}
-run().catch(console.dir);
+
+  );
+
+  person.save();
+
+  //
+  const plum= new Fruit({
+     name: "Plum",
+     score:9,
+     review:"Normalize blood sugar"
+  });
+
+  const avocado= new Fruit({
+    name: "Avocado",
+    score:10,
+    review:"Very healthy fruit with nutty flavour"
+ });
+
+ const orange= new Fruit({
+  name: "Orange",
+  score:7,
+  review:"Spanish oranges are sweet"
+});
+
+Fruit.insertMany([ plum, avocado, orange], function(error, docs) {
+
+  if(err){
+    console.log(err);
+  }
+
+  else{
+    console.log("Sucessfully saved all fruits to the FruitsDB");
+  }
+});
