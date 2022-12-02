@@ -15,14 +15,14 @@ const fruitSchema = new mongoose.Schema({
    review: String
  });
  
-// //schema model
-// const Fruit = mongoose.model("Fruit", fruitSchema); //convert prularise form fruits,stick to specify sturcture called fruitschema
-// const fruit = new Fruit({
+//schema model
+const Fruit = mongoose.model("Fruit", fruitSchema); //convert prularise form fruits,stick to specify sturcture called fruitschema
+const fruit = new Fruit({
  
-//  rating:9,
-//  review: "Liche is yummy!"
+ rating:9,
+ review: "Liche is yummy!"
 
-// });
+});
 
 //fruit.save(); //save fruits doc save in Fruit collection fruitdb
 
@@ -103,13 +103,13 @@ Fruit.find(function(error,fruits){
 // });
 
 
-Fruit.deleteOne({name:"Liche"},function(error){
+// Fruit.deleteOne({name:"Liche"},function(error){
  
-  if(error){
-    console.log(error);
-  }
+//   if(error){
+//     console.log(error);
+//   }
 
-  else{
-    console.log("Successfully deleted Liche in the document");
-  }
-})
+//   else{
+//     console.log("Successfully deleted Liche in the document");
+//   }
+// })
