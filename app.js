@@ -91,25 +91,25 @@ Fruit.find(function(error,fruits){
 });
 
 
-Fruit.updateOne({ _id: "6389d9a295aeab3b0622204b" },{ name:"Liche"},function(error){
- 
-  if(error){
-    console.log(error);
-  }
-
-  else{
-    console.log("Successfully update liche name in the document");
-  }
-});
-
-
-// Fruit.deleteOne({name:"Liche"},function(error){
+// Fruit.updateOne({ _id: "6389d9a295aeab3b0622204b" },{ name:"Liche"},function(error){
  
 //   if(error){
 //     console.log(error);
 //   }
 
 //   else{
-//     console.log("Successfully deleted Liche in the document");
+//     console.log("Successfully update liche name in the document");
 //   }
-// })
+// });
+
+
+Fruit.deleteOne({name:"Liche"},function(error){
+ 
+  if(error){
+    console.log(error);
+  }
+
+  else{
+    console.log("Successfully deleted Liche in the document");
+  }
+})
