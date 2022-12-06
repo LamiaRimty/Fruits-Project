@@ -29,16 +29,26 @@ const fruit = new Fruit({
 const personSchema = new mongoose.Schema({
  //collection names
   name:String,
-  age: Number
+  age: Number,
+  favouriteFruit: fruitSchema
 });
 
 //schema model
 const Person = mongoose.model("Person", personSchema); //convert prularise form fruits,stick to specify sturcture called fruitschema
+
+const watermelon = new Fruit({
+  name:"Watermelon",
+  rating:10,
+  review: "Monmoy loves watermelon"
+});
+//watermelon.save();
+
+
 const person = new Person(
-  
   {
-    name:"Rimty",
-    age:27
+    name:"Monmoy",
+    age:27,
+    favouriteFruit: watermelon
   }
   );
   //person.save();
@@ -103,13 +113,13 @@ Fruit.find(function(error,fruits){
 // });
 
 
-Person.deleteOne({ _id: "638f3096155e3ba110143b86"},function(error){
+// Person.deleteOne({ _id: "638f3096155e3ba110143b86"},function(error){
  
-  if(error){
-    console.log(error);
-  }
+//   if(error){
+//     console.log(error);
+//   }
 
-  else{
-    console.log("Successfully deleted extra Rimty in the document");
-  }
-})
+//   else{
+//     console.log("Successfully deleted extra Rimty in the document");
+//   }
+// })
