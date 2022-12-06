@@ -103,13 +103,13 @@ Fruit.find(function(error,fruits){
 // });
 
 
-// Fruit.deleteOne({name:"Liche"},function(error){
+Person.deleteOne({ _id: "638f3096155e3ba110143b86"},function(error){
  
-//   if(error){
-//     console.log(error);
-//   }
+  if(error){
+    console.log(error);
+  }
 
-//   else{
-//     console.log("Successfully deleted Liche in the document");
-//   }
-// })
+  else{
+    console.log("Successfully deleted extra Rimty in the document");
+  }
+})

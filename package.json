@@ -19,6 +19,6 @@
   "homepage": "https://github.com/LamiaRimty/FruitsProject#readme",
   "dependencies": {
     "mongodb": "4.12",
-    "mongoose": "^6.7.3"
+    "mongoose": "^6.8.0"
   }
 }
