@@ -43,6 +43,12 @@ const watermelon = new Fruit({
 });
 //watermelon.save();
 
+const mango = new Fruit({
+  name:"Mango",
+  rating:10,
+  review:"Rimty loves Lengra Mango because of it's Great Taste!"
+});
+//mango.save();
 
 const person = new Person(
   {
@@ -100,8 +106,17 @@ Fruit.find(function(error,fruits){
   }
 });
 
+Person.updateOne({ name: "Rimty"},{ favouriteFruit: mango},function(error){
+     
+  if(error){
+    console.log(error);
+  }
+  else{
+    console.log("Succesfully updated Rimty's favourite fruit mango");
+  }
+});
 
-// Fruit.updateOne({ _id: "6389d9a295aeab3b0622204b" },{ name:"Liche"},function(error){
+// Fruit.updateOne({ _id:"638fa9653bce36317fc6a88f" },{ favouriteFruit:mango },function(error){
  
 //   if(error){
 //     console.log(error);
