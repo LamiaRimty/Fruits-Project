@@ -18,7 +18,7 @@ const fruitSchema = new mongoose.Schema({
 //schema model
 const Fruit = mongoose.model("Fruit", fruitSchema); //convert prularise form fruits,stick to specify sturcture called fruitschema
 const fruit = new Fruit({
- 
+ name:"Liche",
  rating:9,
  review: "Liche is yummy!"
 
